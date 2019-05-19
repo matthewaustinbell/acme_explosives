@@ -1,14 +1,16 @@
-import util from '../../helpers/util';
-import categorieData from '../../helpers/data/categoriesData';
-import type from '../types/types';
+import $ from 'jquery';
+
+import categoriesData from '../../helpers/data/categoriesData';
 import typeData from '../../helpers/data/typesData';
+import util from '../../helpers/util';
+
+import types from '../types/types';
 
 const seeTypeDiv = (e) => {
   const categorieId = e.target.closest('.card').id;
-  console.error('you clicked a button!', categorieId);
-  document.getElementById('categories-page').classList.add('hide');
-  document.getElementById('type-page').classList.remove('hide');
-  type.initType(categorieId);
+  $('#categories-page').addClass('hide');
+  $('#types-page').removeClass('hide');
+  types.initTypes(categorieId);
 };
 
 const bindEvents = () => {
@@ -18,14 +20,19 @@ const bindEvents = () => {
   }
 };
 
+/* a domString to print the categories as cards to the page
+using util.printToDom('categories', domString)
+
+// jQuery's each, iterates over and returns jQuery objects, */
+
 const writeCategories = (categories) => {
   let domString = '';
-  categories.forEach((categorie) => {
+  $.each(categories, () => {
     domString += '<div class="col-3">';
-    domString += `<div id='${categorie.id}' class="card p-2">`;
+    domString += `<div id='${categories.id}' class="card p-2">`;
     domString += '<div class="card-body">';
-    domString += `<h5 class="card-title">${categorie.name}</h5>`;
-    domString += `<button class="btn btn-warning see-type">${categorie.type.length} type</button>`;
+    domString += `<h5 class="card-title">${categories.name}</h5>`;
+    domString += `<button class="btn btn-warning see-type">${categories.type.length} type</button>`;
     domString += '</div>';
     domString += '</div>';
     domString += '</div>';
@@ -34,12 +41,14 @@ const writeCategories = (categories) => {
   bindEvents();
 };
 
+
+/* .then() method that takes the parameter resp
+ and calls in the body writeCategories(resp.data.categories) */
+
 const initCategories = () => {
-  categorieData.loadCategories()
-    .then(resp => typeData.gettypeForEachCategorie(resp.data.categories))
-    .then((categoriesWithTypes) => {
-      writeCategories(categoriesWithtTypes);
-    })
+  categoriesData.loadCategories()
+    .then(resp => typeData.getTypesForEachCategorie(resp.data.categories))
+    .then(categoriesWithTypes => writeCategories(categoriesWithTypes))
     .catch(err => console.error('error from initCategories requests', err));
 };
 
