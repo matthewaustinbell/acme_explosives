@@ -1,0 +1,40 @@
+{
+  "types": [
+      {
+          "id": "type0",
+          "category": "category0",
+          "name": "red",
+          "description": "A Demolition product comprised Strontium Salts, Strontium Nitrate, Strontium Carbonate, Strontium Sulfate, Strontium Chloride"
+      },
+      {
+        "id": "type1",
+        "category": "category0",
+        "name": "Orange",
+        "description": "A Demolition product comprised of Calcium Salts, Calcium Carbonate, Calcium Chloride, Calcium Sulfate"
+      },
+      {
+        "id": "type2",
+        "category": "category0",
+        "name": "Yellow",
+        "description": "A Demolition product comprised Sodium Salts, Sodium Bicarbonate, Sodium Nitrate, Sodium Chloride"
+     },
+     {
+      "id": "type3",
+      "category": "category0",
+      "name": "Green",
+      "description": "A Recreational product comprised Barium Salts, Barium Nitrate, Barium Carbonate, Barium Chloride, Barium Chlorate"
+     },
+     {
+      "id": "type3",
+      "category": "category0",
+      "name": "Blue",
+      "description": "A Recreational product comprised Copper Salts, Copper Chloride, Copper Carbonate, Carbon Oxides"
+     },
+     {
+      "id": "type3",
+      "category": "category0",
+      "name": "Purple",
+      "description": "A Recreational product comprised A special mix of copper and strontium compounds!"
+     } 
+  ]
+}
