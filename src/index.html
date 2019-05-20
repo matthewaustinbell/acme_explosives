@@ -4,19 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Test</title>
+  <title>Acme Explosives</title>
 </head>
-<body>
-  <div>
+<body class="text-center">
+  <!--- Navbar ---> 
+  <div><nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Acme Explosives</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">Categories <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Types</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Products</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="home-page" class="container">
+        <h1>Welcome to Acme Explosives!</h1>
+        <p>Feel free to browse our products above</p>
+      </div>
+  <!--Categories Page-->
+    <div id="categories-page" class="container hide">
     <h1>Categories</h1>
+    <div id="categories" class="d-flex flex-row justify-content-around text-center"></div>
   </div>
+  <!--Types Page-->
   <div id="types-page" class="container hide" >
+    <div>
       <h1>Types</h1>
-      <button id="button" class="btn btn-secondary float-left" id="toBoardsBtn">Back</button>
-      <div id="types-on-board" class="d-flex flex-wrap"></div>
+      <button id="toCategoriesButton" class="btn btn-secondary float-left">Back To Categories</button>
+    </div>
+    <div id="types" class="d-flex flex-wrap"></div>
   </div>
-  <div>
-      <h1>Products</h1>
-  </div>
-</body>
-</html>
+  <!--Products Pages-->
+  <div id="products-page" class="container hide">
+      <div class="d-flex flex-row justify-content-around text-center">
+        <h1>Products</h1>
+        <button id="toTypesBtn" class="btn btn-secondary float-left">Back To Types</button>
+      </div>
+      <div id="products" class="d-flex flex-row justify-content-around text-center"></div>
+    </div>
+  </body>
+  </html>
+  
