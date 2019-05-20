@@ -48,7 +48,9 @@ const writeCategories = (categories) => {
 const initCategories = () => {
   categoriesData.loadCategories()
     .then(resp => typeData.getTypesForEachCategorie(resp.data.categories))
-    .then(categoriesWithTypes => writeCategories(categoriesWithTypes))
+    .then((categoriesWithTypes) => {
+      writeCategories(categoriesWithTypes);
+    })
     .catch(err => console.error('error from initCategories requests', err));
 };
 
