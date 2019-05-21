@@ -20,19 +20,19 @@
      },
      {
       "id": "type3",
-      "category": "category0",
+      "category": "category1",
       "name": "Green",
       "description": "A Recreational product comprised Barium Salts, Barium Nitrate, Barium Carbonate, Barium Chloride, Barium Chlorate"
      },
      {
       "id": "type3",
-      "category": "category0",
+      "category": "category1",
       "name": "Blue",
       "description": "A Recreational product comprised Copper Salts, Copper Chloride, Copper Carbonate, Carbon Oxides"
      },
      {
       "id": "type3",
-      "category": "category0",
+      "category": "category1",
       "name": "Purple",
       "description": "A Recreational product comprised A special mix of copper and strontium compounds!"
      } 

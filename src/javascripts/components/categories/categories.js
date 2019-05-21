@@ -26,13 +26,14 @@ using util.printToDom('categories', domString)
 // jQuery's each, iterates over and returns jQuery objects, */
 
 const writeCategories = (categories) => {
+  console.error(categories);
   let domString = '';
-  $.each(categories, () => {
+  categories.forEach((category) => {
     domString += '<div class="col-3">';
-    domString += `<div id='${categories.id}' class="card p-2">`;
+    domString += `<div id='${category.id}' class="card p-2">`;
     domString += '<div class="card-body">';
-    domString += `<h5 class="card-title">${categories.name}</h5>`;
-    domString += `<button class="btn btn-warning see-type">${categories.type.length} type</button>`;
+    domString += `<h5 class="card-title">${category.name}</h5>`;
+    domString += `<button class="btn btn-warning see-type">${category.types.length} type</button>`;
     domString += '</div>';
     domString += '</div>';
     domString += '</div>';
@@ -50,8 +51,7 @@ const initCategories = () => {
     .then(resp => typeData.getTypesForEachCategorie(resp.data.categories))
     .then((categoriesWithTypes) => {
       writeCategories(categoriesWithTypes);
-    })
-    .catch(err => console.error('error from initCategories requests', err));
+    });
 };
 
 export default { initCategories };
