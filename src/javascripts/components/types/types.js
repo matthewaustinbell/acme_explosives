@@ -12,7 +12,14 @@ const bindEvents = () => {
 const writeTypes = (types) => {
   let domString = '';
   types.forEach((type) => {
-    domString += `<img src="${type.imageUrl}" alt="type image">`;
+    domString += '<div class="col-3">';
+    domString += `<div id='${type.id}' class="card p-2">`;
+    domString += '<div class="card-body">';
+    domString += `<h5 class="card-title">${type.name}</h5>`;
+    domString += `<button class="btn btn-warning see-type">${0} type</button>`;
+    domString += '</div>';
+    domString += '</div>';
+    domString += '</div>';
   });
   util.printToDom('types', domString);
 };

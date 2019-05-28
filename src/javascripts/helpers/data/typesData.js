@@ -15,7 +15,7 @@ const loadTypesForCategorie = categorieId => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-const getTypesForEachCategorie = categories => new Promise((resolve, reject) => {
+const getCategoriesWithTypes = categories => new Promise((resolve, reject) => {
   axios.get('../db/types.json')
     .then((resp) => {
       const { types } = resp.data;
@@ -30,4 +30,4 @@ const getTypesForEachCategorie = categories => new Promise((resolve, reject) => 
     .catch(err => reject(err));
 });
 
-export default { loadTypesForCategorie, getTypesForEachCategorie };
+export default { loadTypesForCategorie, getCategoriesWithTypes };
